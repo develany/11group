@@ -1,7 +1,7 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import "./login.css";
-import { Link } from "react-router-dom";
+
 
 const Login = () => {
     const onFinish = (values) => {
@@ -59,7 +59,7 @@ const Login = () => {
             <Button type="primary" htmlType="submit" className="login-form-button">
               Log in
             </Button>
-            Or <p><Link to="/cadastro"></Link>register</p>  
+            Or <a href='/cadastro'>register</a>  
             
           </Form.Item>
         </Form>
