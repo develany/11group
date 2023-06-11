@@ -1,8 +1,7 @@
+import axios from "axios";
 
-const Api = () => {
-  return (
-    <div>Api</div>
-  )
-}
+const API = axios.create({
+    baseURL: "https://usuarios.ronierlima.dev"
+});
 
-export default Api
+export { API };
