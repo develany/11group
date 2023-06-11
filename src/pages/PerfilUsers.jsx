@@ -10,7 +10,7 @@ function PerfilUser() {
 
   console.log(id);
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
