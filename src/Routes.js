@@ -4,6 +4,7 @@ import Cadastro from "./pages/Cadastro";
 import Termo from "./pages/Termo";
 import PerfilUser from "./pages/PerfilUsers";
 import ListUsers from "./pages/Listusers";
+import CreateUser from "./pages/CreateUser/CreateUser";
 function Routes() {
     return (
         <Rotas>
@@ -12,6 +13,7 @@ function Routes() {
             <Route path="/termo" element={<Termo/>} />
             <Route path="/users/:id" element={<PerfilUser/>} />
             <Route path="/users" element={<ListUsers/>}/>
+            <Route path="/Create" element={<CreateUser/>}/>
         </Rotas>
     )
 }

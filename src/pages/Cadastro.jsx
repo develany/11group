@@ -4,7 +4,8 @@ import {Button,
     Input,
   } from 'antd';
 
-
+  
+    
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -136,4 +137,4 @@ const Cadastro = () => {
     );
 }
 
-export default Cadastro
+export default Cadastro;

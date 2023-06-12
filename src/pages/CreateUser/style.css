@@ -1,0 +1,17 @@
+#cadastro{
+    width: 400px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px  #0000003d;
+    display: flex;
+    flex-direction: column;
+  }
+
+#cadastro>input{
+    margin-bottom: 10px;
+  }
+#cadastro>button{
+    margin-top: 10px;
+  }
