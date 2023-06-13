@@ -5,16 +5,27 @@ import Termo from "./pages/Termo";
 import PerfilUser from "./pages/PerfilUsers";
 import ListUsers from "./pages/Listusers";
 import CreateUser from "./pages/CreateUser/CreateUser";
+import NotFound from "./pages/NotFound";
+import { isLogado } from "./auth";
+import Logado from "./pages/Logado";
 function Routes() {
     return (
         <Rotas>
-            <Route path='/' element = {<Login/>} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/termo" element={<Termo/>} />
+            <Route path='/' element = {<ListUsers/>} /> 
             <Route path="/users/:id" element={<PerfilUser/>} />
-            <Route path="/users" element={<ListUsers/>}/>
+            <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/Create" element={<CreateUser/>}/>
+            <Route path="/termo" element={<Termo/>} />
+            {isLogado ? (
+            <>
+            <Route path="/logado" element={<Logado/>}/>
+            <Route path="*" element={<NotFound/>}/>
+            </>
+            ) : (
+                <Route path="/login" element={<Login/>}/>
+            )}
         </Rotas>
+        
     )
 }
 

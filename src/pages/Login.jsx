@@ -1,22 +1,48 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import "./login.css";
-
+import { useState } from "react";
+import { API } from "../services/Api";
 
 const Login = () => {
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
       };
+      const [email, setEmail] = useState("");
+      const [password, setPassword] = useState("");
+
+  
+  const [user, setUser] = useState(null);
+  async function autenticar(evento) {
+    try {
+      evento.preventDefault();
+
+      const dados = { email, password };
+
+      const response = await API.post("/auth/login",
+        dados
+      );
+
+      localStorage.setItem("logado", true);
+      setUser(response.data.user);
+      
+
+      window.location.href = "/";
+    } catch (error) {
+      alert(error.response.data.error)
+    }
+  }
       return (
         <div id='formulario'>
           <h1>Bem Vindo!</h1>
+          {user && <h2>Bem vindo, {user.name}</h2>}
         <Form
           name="normal_login"
           className="login-form"
           initialValues={{
             remember: true,
           }}
-          onFinish={onFinish}
+          onFinish={onFinish} onSubmit={autenticar} method="POST" action=""
         >
           <Form.Item
             name="username"
@@ -27,7 +53,7 @@ const Login = () => {
               },
             ]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+            <Input prefix={<UserOutlined className="site-form-item-icon" onChange={(evento) => setEmail(evento.target.value)}/>} placeholder="Username" />
           </Form.Item>
           <Form.Item
             name="password"
@@ -39,7 +65,7 @@ const Login = () => {
             ]}
           >
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
+              prefix={<LockOutlined className="site-form-item-icon" onChange={(evento) => setPassword(evento.target.value)}/>}
               type="password"
               placeholder="Password"
             />
