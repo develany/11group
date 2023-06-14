@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Logado = () => {
   return (
     <div>Logado</div>

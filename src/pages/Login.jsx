@@ -5,9 +5,7 @@ import { useState } from "react";
 import { API } from "../services/Api";
 
 const Login = () => {
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
-      };
+    
       const [email, setEmail] = useState("");
       const [password, setPassword] = useState("");
 
@@ -37,12 +35,7 @@ const Login = () => {
           <h1>Bem Vindo!</h1>
           {user && <h2>Bem vindo, {user.name}</h2>}
         <Form
-          name="normal_login"
-          className="login-form"
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish} onSubmit={autenticar} method="POST" action=""
+           onSubmit={autenticar} method="POST" action=""
         >
           <Form.Item
             name="username"
@@ -53,7 +46,13 @@ const Login = () => {
               },
             ]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" onChange={(evento) => setEmail(evento.target.value)}/>} placeholder="Username" />
+            <Input 
+            type="email"
+            id="email"
+            name="email"
+            onChange={(evento) => setEmail(evento.target.value)}
+            prefix={<UserOutlined className="site-form-item-icon" 
+            />} placeholder="Username" />
           </Form.Item>
           <Form.Item
             name="password"
@@ -65,7 +64,11 @@ const Login = () => {
             ]}
           >
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" onChange={(evento) => setPassword(evento.target.value)}/>}
+            id="password"
+            name="password"
+            onChange={(evento) => setPassword(evento.target.value)}
+              prefix={<LockOutlined className="site-form-item-icon" 
+              />}
               type="password"
               placeholder="Password"
             />
@@ -82,7 +85,7 @@ const Login = () => {
           </Form.Item>
     
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
+            <Button type="primary" htmlType="submit" className="login-form-button" >
               Log in
             </Button>
             Or <a href='/cadastro'>register</a>  

@@ -1,7 +1,28 @@
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const deslogar = () =>{
+    localStorage.removeItem('logado');
+
+    window.location.reload()
+  }
   return (
-    <div>Header</div>
+    <header >
+    <nav >
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+
+        <li onClick={deslogar}>
+           Logout
+        </li>
+      </ul>
+    </nav>
+  </header>
   )
 }
 

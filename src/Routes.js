@@ -11,18 +11,18 @@ import Logado from "./pages/Logado";
 function Routes() {
     return (
         <Rotas>
-            <Route path='/' element = {<ListUsers/>} /> 
+            <Route path='/users' element = {<ListUsers/>} /> 
             <Route path="/users/:id" element={<PerfilUser/>} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/Create" element={<CreateUser/>}/>
             <Route path="/termo" element={<Termo/>} />
             {isLogado ? (
             <>
-            <Route path="/logado" element={<Logado/>}/>
+            <Route path="/" element={<Logado/>}/>
             <Route path="*" element={<NotFound/>}/>
             </>
             ) : (
-                <Route path="/login" element={<Login/>}/>
+                <Route path="*" element={<Login/>}/>
             )}
         </Rotas>
         
