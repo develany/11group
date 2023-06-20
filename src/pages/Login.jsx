@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { API } from "../services/Api";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import "./login.css";
 const Login = () => {
@@ -69,20 +69,14 @@ const Login = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        <Link to="*"/>
-          Forgot password
-        
+        <Link to="*">Forgot password</Link>      
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <Link to="*"/>register now!
+        Or <Link to="/cadastro"> register now! </Link>
       </Form.Item>
     </Form>
     </div>
