@@ -7,9 +7,11 @@ import NotFound from "./pages/NotFound";
 import { isLogado } from "./auth";
 import Logado from "./pages/Logado";
 import Login from "./pages/Login";
+import Home from "./pages/Home";
 function Routes() {
     return (
         <Rotas>
+            <Route path="/home" element={<Home/>}/>
             <Route path='/users' element = {<ListUsers/>} /> 
             <Route path="/users/:id" element={<PerfilUser/>} />
             <Route path="/cadastro" element={<Cadastro />} />

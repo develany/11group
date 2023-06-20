@@ -79,6 +79,7 @@ const Login = () => {
         Or <Link to="/cadastro"> register now! </Link>
       </Form.Item>
     </Form>
+    <Link to="/home"> Home </Link>
     </div>
   );
 };
