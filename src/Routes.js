@@ -8,6 +8,8 @@ import { isLogado } from "./auth";
 import Logado from "./pages/Logado";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import ForgotPassword from "./pages/ForgotPassword";
+import REDEFENIR from "./pages/RedefenirSenha";
 function Routes() {
     return (
         <Rotas>
@@ -15,6 +17,17 @@ function Routes() {
             
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/termo" element={<Termo/>} />
+            <Route path="/perfil" element={<PerfilUser/>} />
+            <Route path="/novasenha" element={<ForgotPassword/>} />
+            <Route path="/redefinir" element={<REDEFENIR/>} />
+            {isLogado ? (
+            <>
+            <Route path="/" element={<Logado/>}/>
+            <Route path="*" element={<NotFound/>}/>
+            </>
+            ) : (
+                <Route path="*" element={<Login/>}/>
+            )}
             <Route path="/login" element={<Login/>}/>
             {isLogado ? (
             <>
@@ -26,6 +39,7 @@ function Routes() {
             ) : (
                 <Route path="*" element={<Home/>}/>
             )}
+
         </Rotas>
         
     )

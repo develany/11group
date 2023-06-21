@@ -12,10 +12,10 @@ const Login = () => {
     try {
       const response = await API.post("/auth/login",
         values);
-
       localStorage.setItem("logado", true);
 
       setUser(response.data.user);
+
 
       window.location.href = "/";
     } catch (error) {
