@@ -12,17 +12,19 @@ function Routes() {
     return (
         <Rotas>
             <Route path="/home" element={<Home/>}/>
-            <Route path='/users' element = {<ListUsers/>} /> 
-            <Route path="/users/:id" element={<PerfilUser/>} />
+            
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/termo" element={<Termo/>} />
+            <Route path="/login" element={<Login/>}/>
             {isLogado ? (
             <>
             <Route path="/" element={<Logado/>}/>
+            <Route path='/users' element = {<ListUsers/>} /> 
+            <Route path="/users/:id" element={<PerfilUser/>} />
             <Route path="*" element={<NotFound/>}/>
             </>
             ) : (
-                <Route path="*" element={<Login/>}/>
+                <Route path="*" element={<Home/>}/>
             )}
         </Rotas>
         
