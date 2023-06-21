@@ -1,10 +1,12 @@
 import {Button,
-    Checkbox,
+    
     Form,
     Input,
   } from 'antd';
-
-
+import { API } from '../services/Api';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+  
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -35,20 +37,37 @@ const tailFormItemLayout = {
     },
   },
 };
+
+
 const Cadastro = () => {
+  const [user, setUser] = useState(null);
+  async function autenticar(values) {
+    try {
+      const response = await API.post("/users",
+        values);
+  
+      localStorage.setItem("logado", true);
+  
+      setUser(response.data.user);
+  
+      window.location.href = "/";
+    } catch (error) {
+      alert(error.response.data.error)
+    }
+  }
     const [form] = Form.useForm();
-    const onFinish = (values) => {
-      console.log('Received values of form: ', values);
-    };
+    
     
     return (
         <div id="formulario">
             <h1>CADASTRO</h1>
+            {user && <h2>Bem vindo, {user.name}</h2>}
       <Form
+      method="POST" action=""
         {...formItemLayout}
         form={form}
         name="register"
-        onFinish={onFinish}
+        onFinish = {autenticar}
         initialValues={{
           residence: ['zhejiang', 'hangzhou', 'xihu'],
           prefix: '86',
@@ -58,6 +77,20 @@ const Cadastro = () => {
         }}
         scrollToFirstError
       >
+        <Form.Item
+        name="name"
+        label="UserName"
+        tooltip="What do you want others to call you?"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your nickname!',
+            whitespace: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
         <Form.Item
           name="email"
           label="E-mail"
@@ -89,51 +122,15 @@ const Cadastro = () => {
           <Input.Password />
         </Form.Item>
   
-        <Form.Item
-          name="confirm"
-          label="Confirm Password"
-          dependencies={['password']}
-          hasFeedback
-          rules={[
-            {
-              required: true,
-              message: 'Please confirm your password!',
-            },
-            ({ getFieldValue }) => ({
-              validator(_, value) {
-                if (!value || getFieldValue('password') === value) {
-                  return Promise.resolve();
-                }
-                return Promise.reject(new Error('The two passwords that you entered do not match!'));
-              },
-            }),
-          ]}
-        >
-          <Input.Password />
-        </Form.Item>
-        <Form.Item
-          name="agreement"
-          valuePropName="checked"
-          rules={[
-            {
-              validator: (_, value) =>
-                value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-            },
-          ]}
-          {...tailFormItemLayout}
-        >
-          <Checkbox>
-            I have read the <a href="/termo">agreement</a>
-          </Checkbox>
-        </Form.Item>
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary">
             Register
           </Button>
+          Or <Link to="/login"> Login </Link>
         </Form.Item>
       </Form>
       </div>
     );
 }
 
-export default Cadastro
+export default Cadastro;
