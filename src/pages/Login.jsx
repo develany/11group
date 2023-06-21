@@ -69,7 +69,7 @@ const Login = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Link to="*">Forgot password</Link>      
+        <Link to="/novasenha">Forgot password</Link>      
       </Form.Item>
 
       <Form.Item>

@@ -14,7 +14,6 @@ function Routes() {
     return (
         <Rotas>
             <Route path="/home" element={<Home/>}/>
-            
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/termo" element={<Termo/>} />
             <Route path="/perfil" element={<PerfilUser/>} />
