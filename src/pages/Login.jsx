@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { API } from "../services/Api";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
@@ -16,8 +16,7 @@ const Login = () => {
 
       setUser(response.data.user);
 
-
-      window.location.href = "/";
+      window.location.href = `/users/${response.data.user.id}`;
     } catch (error) {
       alert(error.response.data.error)
     }

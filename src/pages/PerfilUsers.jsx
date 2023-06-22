@@ -31,7 +31,7 @@ function PerfilUser() {
       setUser(response.data);
       
     } catch (error) {
-        alert('Deu error')
+        alert('Deu erro')
     } finally {
         setLoading(false);
     }
