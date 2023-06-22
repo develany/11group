@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import ForgotPassword from "./pages/ForgotPassword";
 import REDEFENIR from "./pages/RedefenirSenha";
+import { Usuario } from "./pages/Usuario";
 function Routes() {
     return (
         <Rotas>
@@ -30,10 +31,10 @@ function Routes() {
             <Route path="/login" element={<Login/>}/>
             {isLogado ? (
             <>
-            <Route path="/" element={<Logado/>}/>
             <Route path='/users' element = {<ListUsers/>} /> 
-            <Route path="/users/:id" element={<PerfilUser/>} />
+            <Route path="/users/:id" element={<Logado/>} />
             <Route path="*" element={<NotFound/>}/>
+            
             </>
             ) : (
                 <Route path="*" element={<Home/>}/>
