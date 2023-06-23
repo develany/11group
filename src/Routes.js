@@ -10,7 +10,8 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import ForgotPassword from "./pages/ForgotPassword";
 import REDEFENIR from "./pages/RedefenirSenha";
-import { Usuario } from "./pages/Usuario";
+import { useParams } from "react-router-dom";
+
 function Routes() {
     return (
         <Rotas>

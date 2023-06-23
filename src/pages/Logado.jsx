@@ -1,11 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Card from "../components/Card.jsx";
 
 const Logado = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
 
 
   const [user, setUser] = useState([]);
