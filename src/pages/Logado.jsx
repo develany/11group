@@ -7,6 +7,7 @@ const Logado = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -17,12 +18,14 @@ const Logado = () => {
   async function getUser() {
     try {
       setLoading(true);
-      const response = await axios.post(
+      const responseLinks = await axios.get(
         `https://usuarios.ronierlima.dev/users/${id}/links`
       );
-      
+      const response = await axios.get(
+        `https://usuarios.ronierlima.dev/users/${id}`
+      );
       setUser(response.data);
-      navigate(`/users/${response.data}`);
+      console.log(response.data)
     } catch (error) {
       alert("Deu error");
     } finally {
@@ -30,7 +33,7 @@ const Logado = () => {
     }
   }
 
-  return loading ? <>carregando...</> : <Card user={user}></Card>;
+  return loading ? <>carregando...</>:<Card user={user}></Card>;
 }
 
 export default Logado;
