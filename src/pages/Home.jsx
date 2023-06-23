@@ -1,18 +1,43 @@
-import { Link } from "react-router-dom"
-import ListUsers from "./Listusers"
-import { Button } from "antd/es/radio"
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Card from "../components/Card.jsx";
+import AddLink from "./AddLink.jsx";
 
-const Home = () => {
-  return (
-    <div id="formulario" >
-        <h1>Bem Vindo!</h1>
-        <div className="menu">
-        <ListUsers/>
-        </div>
-        <Link to="/login"> <Button type="primary">Login</Button> </Link>
-        
-    </div>
-  )
+const Logado = () => {
+   const { id } = useParams();
+
+
+  const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  async function getUser() {
+    try {
+      setLoading(true);
+      const responseLinks = await axios.get(
+        `https://usuarios.ronierlima.dev/users/${id}/links`
+      );
+      const response = await axios.get(
+        `https://usuarios.ronierlima.dev/users/${id}`
+      );
+      setUser(response.data);
+      console.log(response.data)
+    } catch (error) {
+      alert("Deu error");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return loading ? <>carregando...</>:
+  <>
+  <Card user={user}></Card>
+  <AddLink/>
+  </>
 }
 
-export default Home
+export default Logado;
