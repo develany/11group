@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Breadcrumb } from 'antd';
 
 const Header = () => {
-
+  const userId= localStorage.getItem('userId')
   const deslogar = () =>{
     localStorage.removeItem('logado');
 
@@ -12,7 +12,7 @@ const Header = () => {
 <Breadcrumb
     items={[
       {
-        title: <Link to="/users/:id" >Perfil</Link>,
+        title: <Link to={`/users/${userId}`} >Perfil</Link>,
       },
       {
         title: <Link to="/users"> Usuários </Link>,

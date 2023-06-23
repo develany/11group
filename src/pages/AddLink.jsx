@@ -19,9 +19,7 @@ const AddLink = () => {
          dados );
 
     localStorage.setItem("logado", true);
-        
-
-  
+       
         if (response.ok) {
           console.log('Link adicionado:', { title, url, description, userId, imageUrl, isPublic });
         } else {
@@ -56,7 +54,10 @@ const AddLink = () => {
           type="userId"
           placeholder="userId"
           value={userId}
-          onChange={(e) => setUserId(e.target.value)}
+          onChange={(e) =>{
+            console.log(e.target.value);
+            setUserId(e.target.value);
+            }}
         />
         <input
           type="imageUrl"
