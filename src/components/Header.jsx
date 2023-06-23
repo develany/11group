@@ -18,7 +18,7 @@ const Header = () => {
         title: <Link to="/users"> Usuários </Link>,
       },
       {
-        title: <Link to="/login" onClick={deslogar}>sair</Link>,
+        title: <Link to="/" onClick={deslogar}>sair</Link>,
       },
 
 
