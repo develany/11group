@@ -61,11 +61,11 @@ const ForgotPassword = () => {
           </Form.Item>
     
            
-            <Button type="primary"
+            <Button type="primary" style={{backgroundColor: '#95a034'}}
             htmlType="submit" >
                 Enviar Email de Redefinição
             </Button>
-            <br /> <Link to="/*"> Voltar </Link>
+            <br /> <Link id="linksenha" to="/*"> Voltar </Link>
         </Form>
         </div>
       );

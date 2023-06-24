@@ -6,7 +6,7 @@ function Card({ user }) {
     <div>
       {user ? (
         <div id="card">
-          <img width="32" src={user.gravatarUrl} alt="" />
+          <img width="32" src={user.gravatarUrl} alt="imagem de perfil" style={{borderRadius:"50px"}} />
           <Link to={`/users/${user.id}`}>
             <h1>{user.name}</h1>
           </Link>

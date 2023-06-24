@@ -1,13 +1,26 @@
 #card{
     display: flex;
     align-items: center;
+    align-content: center;
+
  
 }
 #card>img{
     max-height: 100px;
     width: 100px;
+    margin-right: 20px;
+}
+#card>h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 #header{
     display: flexbox;
     justify-content: center;
+margin-bottom: 20px;
+}
+#linkHeader{
+text-align: center;
 }

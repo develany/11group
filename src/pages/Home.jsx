@@ -35,8 +35,9 @@ const Logado = () => {
 
   return loading ? <>carregando...</>:
   <>
+  <div id="formulario">
   <Card user={user}></Card>
-  <AddLink/>
+  </div>
   </>
 }
 

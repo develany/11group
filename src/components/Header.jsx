@@ -14,13 +14,13 @@ const Header = () => {
 <Breadcrumb
     items={[
       {
-        title: <Link to={`/users/${userId}`} > Meu Perfil </Link>,
+        title: <Link id="linkHeader" to={`/users/${userId}`} > Meu Perfil </Link>,
       },
       {
-        title: <Link to="/users"> Usuários 11Link </Link>,
+        title: <Link id="linkHeader" to="/users"> Usuários 11Link </Link>,
       },
       {
-        title: <Link to="/" onClick={deslogar}>SAIR</Link>,
+        title: <Link id="linkHeader" to="/" onClick={deslogar}>SAIR</Link>,
       },
     ]}
   />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
-
+import Logo from "../assets/logo.png";
 import axios from "axios";
 
 function ListUsers() {
@@ -17,12 +17,16 @@ function ListUsers() {
   }
 
   return (
+    <>
+    <div id="img"><img src={Logo} alt="Paisagem" width={200}/></div>
     <div id="formulario">
-      <h1>Usuários da 11Link</h1>
+      <h1 id="Listusers">Usuários da 11Link</h1>
+      <hr />
       {users.map((user) => (
         <Card key={user.id} user={user} />
       ))}
     </div>
+    </>
   );
 }
 

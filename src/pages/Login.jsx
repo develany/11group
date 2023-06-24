@@ -74,12 +74,12 @@ const Login = () => {
 
       <Form.Item>
         <Button type="primary" style={{backgroundColor: '#95a034'}} htmlType="submit" className="login-form-button">
-          Log in
+          ENTRAR
         </Button>
         <Form.Item>
       </Form.Item>
-      <Link id="linksenha" to="/novasenha">Forgot password </Link>
-         ou <Link id="linksenha"to="/cadastro"> register now! </Link>
+      <Link id="linksenha" to="/novasenha">Esqueceu sua senha? </Link>
+         ou <Link id="linksenha"to="/cadastro"> Registre-se agora! </Link>
       </Form.Item>
     </Form>
     
