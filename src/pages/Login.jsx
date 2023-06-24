@@ -44,7 +44,7 @@ const Login = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your Username!',
+            message: 'Por favor digite seu e-mail!',
           },
         ]}
       >
@@ -57,7 +57,7 @@ const Login = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your Password!',
+            message: 'Digite sua senha!',
           },
         ]}
       >
@@ -70,7 +70,7 @@ const Login = () => {
         
         />
       </Form.Item>
-      
+   
 
       <Form.Item>
         <Button type="primary" style={{backgroundColor: '#95a034'}} htmlType="submit" className="login-form-button">
@@ -83,6 +83,7 @@ const Login = () => {
       </Form.Item>
     </Form>
     
+
     </div>
     </>
   );
