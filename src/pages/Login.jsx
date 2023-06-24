@@ -4,6 +4,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import "./login.css";
+import Logo from "../assets/logo.png";
 const Login = () => {
   
   const [user, setUser] = useState(null);
@@ -24,6 +25,8 @@ const Login = () => {
 
 
   return (
+    <>
+    <div id="img"><img src={Logo} alt="Paisagem" width={200}/></div>
     <div id="formulario">
     <h1>Faça o Login</h1>
 
@@ -67,19 +70,21 @@ const Login = () => {
         
         />
       </Form.Item>
-      <Form.Item>
-        <Link to="/novasenha">Forgot password</Link>      
-      </Form.Item>
+      
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button type="primary" style={{backgroundColor: '#95a034'}} htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <Link to="/cadastro"> register now! </Link>
+        <Form.Item>
+      </Form.Item>
+      <Link id="linksenha" to="/novasenha">Forgot password </Link>
+         ou <Link id="linksenha"to="/cadastro"> register now! </Link>
       </Form.Item>
     </Form>
-    <Link to="/home"> Home </Link>
+    
     </div>
+    </>
   );
 };
 export default Login;
