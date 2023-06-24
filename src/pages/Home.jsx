@@ -27,7 +27,7 @@ const Logado = () => {
       setUser(response.data);
       console.log(response.data)
     } catch (error) {
-      alert("Deu error");
+      alert("Deu erro");
     } finally {
       setLoading(false);
     }

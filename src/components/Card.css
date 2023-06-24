@@ -7,3 +7,7 @@
     max-height: 100px;
     width: 100px;
 }
+#header{
+    display: flexbox;
+    justify-content: center;
+}

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Breadcrumb } from 'antd';
+import "./Card.css";
 
 const Header = () => {
   const userId= localStorage.getItem('userId')
@@ -9,21 +10,21 @@ const Header = () => {
     window.location.reload()
   }
   return (
+    <div id="header">
 <Breadcrumb
     items={[
       {
-        title: <Link to={`/users/${userId}`} >Perfil</Link>,
+        title: <Link to={`/users/${userId}`} > Meu Perfil </Link>,
       },
       {
-        title: <Link to="/users"> Usuários </Link>,
+        title: <Link to="/users"> Usuários 11Link </Link>,
       },
       {
-        title: <Link to="/" onClick={deslogar}>sair</Link>,
+        title: <Link to="/" onClick={deslogar}>SAIR</Link>,
       },
-
-
     ]}
   />
+  </div>
   )
 }
 

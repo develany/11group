@@ -41,7 +41,7 @@ const Login = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your Username!',
+            message: 'Por favor digite seu e-mail!',
           },
         ]}
       >
@@ -54,7 +54,7 @@ const Login = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your Password!',
+            message: 'Digite sua senha!',
           },
         ]}
       >
@@ -68,17 +68,16 @@ const Login = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Link to="/novasenha">Forgot password</Link>      
+        <Link to="/novasenha">Esqueceu sua senha?</Link>      
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
+          LOGAR
         </Button>
-        Or <Link to="/cadastro"> register now! </Link>
+         Ou <Link to="/cadastro"> REGISTRE-SE AGORA! </Link>
       </Form.Item>
     </Form>
-    <Link to="/home"> Home </Link>
     </div>
   );
 };

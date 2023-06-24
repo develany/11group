@@ -79,11 +79,11 @@ const Cadastro = () => {
         <Form.Item
         name="name"
         label="UserName"
-        tooltip="What do you want others to call you?"
+        tooltip="Como você quer ser chamado?"
         rules={[
           {
             required: true,
-            message: 'Please input your nickname!',
+            message: 'Insira seu Nome!',
             whitespace: true,
           },
         ]}
@@ -96,11 +96,11 @@ const Cadastro = () => {
           rules={[
             {
               type: 'email',
-              message: 'The input is not valid E-mail!',
+              message: 'Insira um e-mail válido!',
             },
             {
               required: true,
-              message: 'Please input your E-mail!',
+              message: 'Digite seu e-mail!',
             },
           ]}
         >
@@ -113,7 +113,7 @@ const Cadastro = () => {
           rules={[
             {
               required: true,
-              message: 'Please input your password!',
+              message: 'Escolha uma senha!',
             },
           ]}
           hasFeedback
