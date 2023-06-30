@@ -15,6 +15,7 @@ const Login = () => {
         values);
       localStorage.setItem("logado", true);
       localStorage.setItem("userId", response.data.user.id);
+      
       setUser(response.data.user);
 
       window.location.href = `/users/${response.data.user.id}`;

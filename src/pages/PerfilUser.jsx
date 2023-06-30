@@ -2,11 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card.jsx";
-import AddLink from "./AddLink.jsx";
 
-const Logado = () => {
-   const { id } = useParams();
+function PerfilUser() {
+  const { id } = useParams();
 
+  console.log(id);
 
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -18,29 +18,26 @@ const Logado = () => {
   async function getUser() {
     try {
       setLoading(true);
-      const responseLinks = await axios.get(
-        `https://usuarios.ronierlima.dev/users/${id}/links`
-      );
       const response = await axios.get(
         `https://usuarios.ronierlima.dev/users/${id}`
       );
+
+      const responseLinks = await axios.get(
+        `https://usuarios.ronierlima.dev/users/${id}/links`
+      );
+
+      console.log(responseLinks.data);
+
       setUser(response.data);
-      console.log(response.data)
+      
     } catch (error) {
-      alert("Deu erro");
+        alert('Deu erro')
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
   }
 
-  return loading ? <>carregando...</>:
-  <>
-  <div id="formulario">
-  <Card user={user}></Card>
-
-  </div>
-
-  </>
+  return loading ? <>carregando...</> : <Card user={user}></Card>;
 }
 
-export default Logado;
+export default PerfilUser;

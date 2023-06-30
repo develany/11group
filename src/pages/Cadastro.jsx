@@ -122,7 +122,7 @@ const Cadastro = () => {
         </Form.Item>
   
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary">
+          <Button type="primary" htmlType="submit">
             Register
           </Button>
           Or <Link to="/login"> Login </Link>
