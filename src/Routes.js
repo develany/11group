@@ -21,7 +21,7 @@ function Routes() {
             <Route path="*" element={<NotFound/>}/>
             <Route path='/users' element = {<ListUsers/>} /> 
             <Route path="/users/:id" element={<Home/>} />
-            <Route path="/user/:id/links" element={<AddLink/>}/>
+            <Route path="/users/:id/links" element={<AddLink/>} />
             </>
             ) : (
                 <Route path="*" element={<Login/>}/>

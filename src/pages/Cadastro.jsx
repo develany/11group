@@ -1,11 +1,12 @@
-import {Button,
-    Form,
-    Input,
-  } from 'antd';
+import {
+  Button,
+  Form,
+  Input,
+} from 'antd';
 import { API } from '../services/Api';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-  
+
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -44,29 +45,29 @@ const Cadastro = () => {
     try {
       const response = await API.post("/users",
         values);
-  
+
       localStorage.setItem("logado", true);
-  
+
       setUser(response.data.user);
-  
+
       window.location.href = "/";
     } catch (error) {
       alert(error.response.data.error)
     }
   }
-    const [form] = Form.useForm();
-    
-    
-    return (
-        <div id="formulario">
-            <h1>CADASTRO</h1>
-            {user && <h2>Bem vindo, {user.name}</h2>}
+  const [form] = Form.useForm();
+
+
+  return (
+    <div id="formulario">
+      <h1>CADASTRO</h1>
+      {user && <h2>Bem vindo, {user.name}</h2>}
       <Form
-      method="POST" action=""
+        method="POST" action=""
         {...formItemLayout}
         form={form}
         name="register"
-        onFinish = {autenticar}
+        onFinish={autenticar}
         initialValues={{
           residence: ['zhejiang', 'hangzhou', 'xihu'],
           prefix: '86',
@@ -77,19 +78,19 @@ const Cadastro = () => {
         scrollToFirstError
       >
         <Form.Item
-        name="name"
-        label="UserName"
-        tooltip="Como você quer ser chamado?"
-        rules={[
-          {
-            required: true,
-            message: 'Insira seu Nome!',
-            whitespace: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+          name="name"
+          label="UserName"
+          tooltip="Como você quer ser chamado?"
+          rules={[
+            {
+              required: true,
+              message: 'Insira seu Nome!',
+              whitespace: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
         <Form.Item
           name="email"
           label="E-mail"
@@ -106,7 +107,7 @@ const Cadastro = () => {
         >
           <Input />
         </Form.Item>
-  
+
         <Form.Item
           name="password"
           label="Password"
@@ -120,7 +121,7 @@ const Cadastro = () => {
         >
           <Input.Password />
         </Form.Item>
-  
+
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
             Register
@@ -128,8 +129,8 @@ const Cadastro = () => {
           Or <Link to="/login"> Login </Link>
         </Form.Item>
       </Form>
-      </div>
-    );
+    </div>
+  );
 }
 
 export default Cadastro;

@@ -6,10 +6,11 @@ const Header = () => {
   const userId= localStorage.getItem('userId')
   const deslogar = () =>{
     localStorage.removeItem('logado');
-
-    window.location.reload()
+    localStorage.removeItem('userId');
+    localStorage.removeItem('token');
   }
   return (
+    
     <div id="header">
 <Breadcrumb
     items={[

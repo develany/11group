@@ -2,14 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card.jsx";
-import AddLink from "./AddLink.jsx";
+import Links from "./Links.jsx";
+import { Button } from "antd/es/radio/index.js";
+
 
 const Logado = () => {
-   const { id } = useParams();
+  const { id } = useParams();
 
 
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [links, setLink] = useState([]);
 
   useEffect(() => {
     getUser();
@@ -25,7 +28,9 @@ const Logado = () => {
         `https://usuarios.ronierlima.dev/users/${id}`
       );
       setUser(response.data);
+      setLink(responseLinks.data)
       console.log(response.data)
+      console.log(responseLinks.data)
     } catch (error) {
       alert("Deu erro");
     } finally {
@@ -33,14 +38,16 @@ const Logado = () => {
     }
   }
 
-  return loading ? <>carregando...</>:
-  <>
-  <div id="formulario">
-  <Card user={user}></Card>
+  return loading ? <>carregando...</> :
+    <>
+      <div id="formulario">
+        <Card user={user}></Card>
+        <Button>Adicionar Link</Button>
 
-  </div>
 
-  </>
+        <Links links={links} />
+      </div>
+    </>
 }
 
 export default Logado;

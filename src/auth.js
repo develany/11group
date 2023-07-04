@@ -1,3 +1,9 @@
-const valor = localStorage.getItem('logado')
+export const isLogado = () => {
 
-export const isLogado = JSON.parse(valor);
+    if (localStorage.getItem('token')) {
+
+        return true
+    }
+
+    return false
+}
