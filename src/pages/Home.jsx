@@ -43,7 +43,7 @@ const Logado = () => {
     <>
       <div id="formulario">
         <Card user={user}></Card>
-        {isLogado && <Button>Adicionar Link</Button>}
+        {isLogado() && <Button>Adicionar Link</Button>}
         
 
 
