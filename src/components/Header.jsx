@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Breadcrumb } from 'antd';
 import "./Card.css";
 
@@ -8,6 +8,7 @@ const Header = () => {
     localStorage.removeItem('logado');
     localStorage.removeItem('userId');
     localStorage.removeItem('token');
+    Navigate('/');    
   }
   return (
     

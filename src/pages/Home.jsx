@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card.jsx";
 import Links from "./Links.jsx";
 import { Button } from "antd/es/radio/index.js";
+import { isLogado } from "../auth.js";
 
 
 const Logado = () => {
@@ -42,7 +43,8 @@ const Logado = () => {
     <>
       <div id="formulario">
         <Card user={user}></Card>
-        <Button>Adicionar Link</Button>
+        {isLogado && <Button>Adicionar Link</Button>}
+        
 
 
         <Links links={links} />

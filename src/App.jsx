@@ -5,7 +5,8 @@ import Header from "./components/Header";
 function App() {
   return (
     <>
-    {isLogado && <Header/>}
+    {console.log(isLogado())}
+    {isLogado() && <Header/>}
      <Routes/>
     </>
   );

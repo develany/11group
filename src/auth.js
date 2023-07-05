@@ -1,9 +1,4 @@
 export const isLogado = () => {
-
-    if (localStorage.getItem('token')) {
-
-        return true
-    }
-
-    return false
-}
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
