@@ -1,7 +1,7 @@
 import { Button, message } from 'antd';
 import { API } from '../services/Api';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 
 
 const AddLink = () => {
@@ -29,7 +29,7 @@ const AddLink = () => {
     } catch (error) {
       alert(error.response.data.error)
     }
-    message.error(values)
+    window.location.reload()
   }
 
   return (
@@ -49,8 +49,8 @@ const AddLink = () => {
         onChange={(e) => setUrl(e.target.value)}
       />
       
-      <Button onClick={add} htmlType="submit" >Adicionar</Button>
-    </div>
+      <Button onClick={add} htmlType="submit">Adicionar</Button>
+    </div> 
   );
 }
 

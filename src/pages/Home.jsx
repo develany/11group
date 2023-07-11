@@ -3,14 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card.jsx";
 import Links from "./Links.jsx";
-import { Button } from "antd/es/radio/index.js";
-import { isLogado } from "../auth.js";
-
+import AddLink from "./AddLink.jsx";
+const userId= localStorage.getItem('userId')
 
 const Logado = () => {
   const { id } = useParams();
-
-
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
   const [links, setLink] = useState([]);
@@ -43,10 +40,7 @@ const Logado = () => {
     <>
       <div id="formulario">
         <Card user={user}></Card>
-        {isLogado() && <Button>Adicionar Link</Button>}
-        
-
-
+        {id===userId && <AddLink/>}
         <Links links={links} />
       </div>
     </>
