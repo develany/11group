@@ -1,23 +1,31 @@
-import { Link } from "react-router-dom"
+import { Table } from "antd";
+import { Link } from "react-router-dom";
 
 const Links = ({ links }) => {
-    return (
-        <div>
-            {links ? (
-                <div>
-                    <ul>
-                        {links.map((links) => 
-                        (<li key={links.createdAt} ><Link to={`${links.url}`} target="_blank"  >{links.url}</Link></li>)
-                        )}
-                    </ul>
+  const columns = [
+    {
+      title: "Título",
+      dataIndex: "title",
+      key: "title",
+    },
+    {
+      title: "URL",
+      dataIndex: "url",
+      key: "url",
+      render: (text) => <Link to={text} target="_blank">{text}</Link>,
+    },
+  ];
 
-                </div>
-            ) : (
-                <>sem usuario</>
-            )}
-            <hr />
-        </div>
-    )
-}
+  return (
+    <div>
+      {links ? (
+        <Table dataSource={links} columns={columns}  />
+      ) : (
+        <>sem usuário</>
+      )}
+      <hr />
+    </div>
+  );
+};
 
-export default Links
+export default Links;

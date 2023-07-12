@@ -66,7 +66,7 @@ const ForgotPassword = () => {
           htmlType="submit" >
           Enviar Email de Redefinição
         </Button>
-        <br /> <Link id="linksenha" to="/*"> Voltar </Link>
+        <br /> <Link id="linksenha" to="/"> Voltar </Link>
       </Form>
     </div>
   );

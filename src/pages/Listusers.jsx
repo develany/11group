@@ -19,12 +19,13 @@ function ListUsers() {
   return (
     <>
       <div id="img"><img src={Logo} alt="Paisagem" width={300} /></div>
-      <div id="formulario">
-        <h1 id="Listusers">Usuários da 11Link</h1>
+      <div id="formulario" >
         <hr />
+        <div className="menu" >
         {users.map((user) => (
           <Card key={user.id} user={user} />
         ))}
+        </div>
       </div>
     </>
   );

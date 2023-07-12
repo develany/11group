@@ -41,7 +41,9 @@ const Logado = () => {
       <div id="formulario">
         <Card user={user}></Card>
         {id===userId && <AddLink/>}
-        <Links links={links} />
+        <div className="links">
+          <Links links={links} />
+        </div>
       </div>
     </>
 }

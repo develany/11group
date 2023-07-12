@@ -17,7 +17,7 @@ const Header = () => {
   return (
     
     <div id="header">
-<Breadcrumb
+<Breadcrumb style={{font: 'normal bold 20px/1.5 Inter, sans-serif'}}
     items={[
       {
         title: <Link id="linkHeader" to="/users"> Usuários 11Link </Link>,

@@ -1,6 +1,5 @@
 import {
   Button,
-
   Form,
   Input,
 } from 'antd';
@@ -30,7 +29,7 @@ const REDEFENIR = () => {
   return (
     <div id="formulario">
       <h1>REDEFINIR SUA SENHA</h1>
-      <h2>Por favor digite o token recebido no seu e-mail e a nova senha</h2>
+      <h2 id='linkTexto'>Por favor digite o token recebido no seu e-mail e a nova senha</h2>
       {user && <h2>Bem vindo, {user.name}</h2>}
       <Form
         method="POST" action="token"
@@ -97,7 +96,8 @@ const REDEFENIR = () => {
           htmlType="submit">
           Enviar
         </Button>
-        <br /> <Link id="linksenha" to="/*"> Voltar </Link>
+        <br /> 
+        <Link id="linksenha" to="/"> Voltar </Link>
       </Form>
     </div>
   );

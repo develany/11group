@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     align-content: center;
-
  
 }
 #card>img{
@@ -15,11 +14,12 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+
 }
 #header{
     display: flexbox;
     justify-content: center;
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 #linkHeader{
 text-align: center;

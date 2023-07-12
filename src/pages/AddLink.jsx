@@ -35,7 +35,7 @@ const AddLink = () => {
   return (
     <div>
       {link && <h2>Links</h2>}
-      <h2>Adicionar Link</h2>
+      <h1 id='linkTexto'>Adicionar Link</h1>
       <Input
               type="string"
               id="title"
@@ -47,7 +47,7 @@ const AddLink = () => {
 
       <Input
               type="url"
-              id="URL"
+              id="url"
               name="URL"
               placeholder="URL"
               value={url}
