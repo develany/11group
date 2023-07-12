@@ -30,7 +30,7 @@ const Login = () => {
 
   return (
     <>
-      <div id="img"><img src={Logo} alt="Paisagem" width={200} /></div>
+      <div id="img"><img src={Logo} alt="Paisagem" width={300} /></div>
       <div id="formulario">
         <h1>Faça o Login</h1>
 

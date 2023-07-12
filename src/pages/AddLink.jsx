@@ -1,7 +1,7 @@
-import { Button, message } from 'antd';
+import { Button, Input } from 'antd';
 import { API } from '../services/Api';
 import { useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 const AddLink = () => {
@@ -36,20 +36,25 @@ const AddLink = () => {
     <div>
       {link && <h2>Links</h2>}
       <h2>Adicionar Link</h2>
-      <input
-        type="string"
-        placeholder="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="url"
-        placeholder="URL"
-        value={url}
+      <Input
+              type="string"
+              id="title"
+              name="title"
+              placeholder="De onde é o link?"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+
+      <Input
+              type="url"
+              id="URL"
+              name="URL"
+              placeholder="URL"
+              value={url}
         onChange={(e) => setUrl(e.target.value)}
-      />
+            />
       
-      <Button onClick={add} htmlType="submit">Adicionar</Button>
+      <Button type="primary" style={{ backgroundColor: '#95a034' }}  className="login-form-button" onClick={add} htmlType="submit">Adicionar</Button>
     </div> 
   );
 }
