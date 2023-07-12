@@ -14,7 +14,7 @@
 ## :page_with_curl: Sobre 
 
 11Link é uma plataforma de rede social inovadora, desenvolvida utilizando a biblioteca React, que oferece aos usuários uma maneira fácil e eficiente de conectar-se e compartilhar links relevantes em um ambiente amigável e interativo.
-
+![Tela de login](src/assets/tela_de_login.png)
 ## :hammer: Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
