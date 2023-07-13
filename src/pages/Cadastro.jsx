@@ -79,7 +79,7 @@ const Cadastro = () => {
       >
         <Form.Item
           name="name"
-          label="UserName"
+          label="Nome de usuário"
           tooltip="Como você quer ser chamado?"
           rules={[
             {
@@ -93,15 +93,15 @@ const Cadastro = () => {
         </Form.Item>
         <Form.Item
           name="email"
-          label="E-mail"
+          label="Email"
           rules={[
             {
               type: 'email',
-              message: 'Insira um e-mail válido!',
+              message: 'Insira um email válido!',
             },
             {
               required: true,
-              message: 'Digite seu e-mail!',
+              message: 'Digite seu email!',
             },
           ]}
         >
@@ -110,7 +110,7 @@ const Cadastro = () => {
 
         <Form.Item
           name="password"
-          label="Password"
+          label="Senha"
           rules={[
             {
               required: true,
@@ -124,9 +124,9 @@ const Cadastro = () => {
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
-            Register
+            Cadastre-se
           </Button>
-          Or <Link to="/login"> Login </Link>
+          ou <Link to="/"> Login </Link>
         </Form.Item>
       </Form>
     </div>
