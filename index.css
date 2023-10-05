@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Quebec-Light';
+    src: url('/public/Quebec-Light-Regular/Quebec-Bold.otf') format('opentype');
+}
+
+body {
+    background-color: #222d97;
+    display: flex;
+    justify-content: center;
+    font-family: 'Quebec-Light', sans-serif;
+}
+
+div {
+    font-family: 'Quebec-Light', sans-serif;
+}

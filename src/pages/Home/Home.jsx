@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Card from "../components/Card.jsx";
-import Links from "./Links.jsx";
-import AddLink from "./AddLink.jsx";
-const userId= localStorage.getItem('userId')
+import Card from "../../components/Card.jsx";
+import Links from "../Links.jsx";
+import AddLink from "../AddLink.jsx";
+const userId = localStorage.getItem('userId')
 
 const Logado = () => {
   const { id } = useParams();
@@ -40,7 +40,7 @@ const Logado = () => {
     <>
       <div id="formulario">
         <Card user={user}></Card>
-        {id===userId && <AddLink/>}
+        {id === userId && <AddLink />}
         <div className="links">
           <Links links={links} />
         </div>

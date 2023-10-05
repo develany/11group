@@ -1,9 +1,5 @@
-import {
-  Button,
-  Form,
-  Input,
-} from 'antd';
-import { API } from '../services/Api';
+import { Button, Form, Input } from 'antd';
+import { API } from '../../services/Api';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -29,7 +25,9 @@ const REDEFENIR = () => {
   return (
     <div id="formulario">
       <h1>REDEFINIR SUA SENHA</h1>
-      <h2 id='linkTexto'>Por favor digite o token recebido no seu e-mail e a nova senha</h2>
+      <h2 id='linkTexto' style={{
+        maxWidth: 400,
+      }}>Por favor preencha com os dados recebidos no e-mail e a nova senha</h2>
       {user && <h2>Bem vindo, {user.name}</h2>}
       <Form
         method="POST" action="token"
@@ -92,11 +90,11 @@ const REDEFENIR = () => {
             placeholder="Digite a nova senha" />
         </Form.Item>
 
-        <Button type="primary" style={{ backgroundColor: '#95a034' }}
+        <Button type="primary" style={{ backgroundColor: '#222d97' }}
           htmlType="submit">
           Enviar
         </Button>
-        <br /> 
+        <br />
         <Link id="linksenha" to="/"> Voltar </Link>
       </Form>
     </div>

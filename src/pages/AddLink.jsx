@@ -10,19 +10,21 @@ const AddLink = () => {
   const [title, setTitle] = useState('');
   const description = 'Links'
   const [url, setUrl] = useState('');
-  const imageUrl= 'perfil'
+  const imageUrl = 'perfil'
   const isPublic = true;
   const userId = localStorage.getItem('userId')
-    
+
   const [link, setLink] = useState(null);
 
-  async function add () {
-    
+  async function add() {
+
     const values = { title, url, description, userId, imageUrl, isPublic }
     try {
-      const response = await API.post(`/users/${id}/links`, values, { headers: {
-        Authorization: `Bearer ${token}`
-      }});
+      const response = await API.post(`/users/${id}/links`, values, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
 
 
       setLink(response.data);
@@ -37,25 +39,25 @@ const AddLink = () => {
       {link && <h2>Links</h2>}
       <h1 id='linkTexto'>Adicionar Link</h1>
       <Input
-              type="string"
-              id="title"
-              name="title"
-              placeholder="De onde é o link?"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
+        type="string"
+        id="title"
+        name="title"
+        placeholder="De onde é o link?"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
 
       <Input
-              type="url"
-              id="url"
-              name="URL"
-              placeholder="URL"
-              value={url}
+        type="url"
+        id="url"
+        name="URL"
+        placeholder="URL"
+        value={url}
         onChange={(e) => setUrl(e.target.value)}
-            />
-      
-      <Button type="primary" style={{ backgroundColor: '#95a034' }}  className="login-form-button" onClick={add} htmlType="submit">Adicionar</Button>
-    </div> 
+      />
+
+      <Button type="primary" style={{ backgroundColor: '#222d97', fontFamily: 'Quebec-Light' }} className="login-form-button" onClick={add} htmlType="submit">Adicionar</Button>
+    </div>
   );
 }
 

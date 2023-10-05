@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { API } from "../services/Api";
+import { API } from "../../services/Api";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import "./login.css";
-import Logo from "../assets/logo.png";
+import Logo from "../../assets/logo.png";
 const Login = () => {
 
   const [user, setUser] = useState(null);
@@ -30,7 +30,7 @@ const Login = () => {
 
   return (
     <>
-      <div id="img"><img src={Logo} alt="Paisagem" width={300} /></div>
+      <div id="img"><img src={Logo} alt="Paisagem" width={150} /></div>
       <div id="formulario">
         <h1>Faça o Login</h1>
 
@@ -76,7 +76,7 @@ const Login = () => {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" style={{ backgroundColor: '#95a034' }} htmlType="submit" className="login-form-button">
+            <Button type="primary" style={{ backgroundColor: '#222d97', fontFamily: 'Quebec-Light, sans-serif' }} htmlType="submit" className="login-form-button">
               ENTRAR
             </Button>
             <Form.Item>
@@ -88,6 +88,8 @@ const Login = () => {
 
 
       </div>
+
+
     </>
   );
 };

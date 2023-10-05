@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Quebec-Light';
+    src: url('/public/Quebec-Light-Regular/Quebec-Bold.otf') format('opentype');
+}
+
+body {
+    background-color: #222d97;
+    display: flex;
+    justify-content: center;
+    font-family: 'Quebec-Light', sans-serif;
+}
+
+#formulario {
+
+    background-color: #c8c9cf;
+    padding: 30px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #0000003d;
+    font-family: 'Quebec-Light', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Quebec-Light', sans-serif;
+    font-size: bolder;
+    padding-bottom: 35px;
+    color: #222d97;
+}
+
+h2 {
+    text-align: center;
+    color: #222d97;
+    font-size: 12px;
+    font-family: 'Quebec-Light', sans-serif;
+}
+
+
+
+#components-form-demo-normal-login .login-form {
+    width: 300px;
+}
+
+#components-form-demo-normal-login .login-form-forgot {
+    float: right;
+}
+
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+    float: left;
+}
+
+#components-form-demo-normal-login .login-form-button {
+    width: 100%;
+
+}
+
+.menu {
+    width: 100%;
+    max-height: 330px;
+    overflow-y: scroll;
+}
+
+#img {
+    text-align: center;
+}
+
+Button {
+    width: 100%;
+    height: 100px;
+    font-weight: 2em;
+    margin-bottom: 10px;
+    font-family: 'Quebec-Light', sans-serif;
+}
+
+#linksenha {
+    text-decoration: none;
+    color: #222d97;
+    outline: none;
+}
+
+#Listusers {
+    font-size: 30px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+
+}
+
+#title,
+#url {
+    margin-bottom: 10px;
+}
+
+#linkTexto {
+    padding-bottom: 5px;
+    font-size: 1.5em;
+
+}
+
+#header {
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    font-family: 'Quebec-Light', sans-serif;
+}
+
+title {
+    font-size: 2em;
+    font-family: 'Quebec-Light', sans-serif;
+}

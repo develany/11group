@@ -4,7 +4,7 @@ import {
   Form,
   Input,
 } from 'antd';
-import { API } from '../services/Api';
+import { API } from '../../services/Api';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const ForgotPassword = () => {
 
   return (
     <div id="formulario">
-      <h1>REDEFENIR SUA SENHA?</h1>
+      <h1>Esqueceu sua senha?</h1>
       {user && <h2>Bem vindo, {user.name}</h2>}
       <Form
         method="POST" action=""
@@ -62,9 +62,9 @@ const ForgotPassword = () => {
         </Form.Item>
 
 
-        <Button type="primary" style={{ backgroundColor: '#95a034' }}
+        <Button type="primary" style={{ backgroundColor: '#222d97' }}
           htmlType="submit" >
-          Enviar Email de Redefinição
+          Enviar e-mail de Redefinição
         </Button>
         <br /> <Link id="linksenha" to="/"> Voltar </Link>
       </Form>
