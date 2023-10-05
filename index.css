@@ -13,22 +13,3 @@ body {
 div {
     font-family: 'Quebec-Light', sans-serif;
 }
-
-.custom-search {
-    height: 40px;
-    /* Ajuste a altura conforme necessário */
-    background-color: #222d97;
-    /* Cor de fundo azul desejada */
-    border: none;
-    /* Remove a borda padrão */
-    color: #fff;
-    /* Cor do texto */
-}
-
-.custom-search:hover,
-.custom-search:focus {
-    border-color: #222d97;
-    /* Cor da borda ao passar o mouse ou focar */
-    box-shadow: none;
-    /* Remove a sombra padrão ao passar o mouse ou focar */
-}

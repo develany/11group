@@ -14,6 +14,7 @@ const Logado = () => {
 
   useEffect(() => {
     getUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function getUser() {
@@ -42,7 +43,7 @@ const Logado = () => {
         <Card user={user}></Card>
         {id === userId && <AddLink />}
         <div className="links" >
-          <Links links={links} style={{ height: 10 }} />
+          <Links links={links} />
         </div>
       </div>
     </>
