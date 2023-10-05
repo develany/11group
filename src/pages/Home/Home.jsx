@@ -38,11 +38,11 @@ const Logado = () => {
 
   return loading ? <>carregando...</> :
     <>
-      <div id="formulario">
+      <div id="formulario" >
         <Card user={user}></Card>
         {id === userId && <AddLink />}
-        <div className="links">
-          <Links links={links} />
+        <div className="links" >
+          <Links links={links} style={{ height: 10 }} />
         </div>
       </div>
     </>

@@ -17,9 +17,10 @@ const Links = ({ links }) => {
   ];
 
   return (
-    <div>
+    <div >
       {links ? (
-        <Table dataSource={links} columns={columns}  />
+        <Table dataSource={links} columns={columns} pagination={{ pageSize: 5 }}
+        />
       ) : (
         <>sem usuário</>
       )}
